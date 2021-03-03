@@ -1,0 +1,24 @@
+
+Name :Inam ul Hassan
+3/3/2021
+#................Excercise...........
+#how many missing values in the built data set airquality.
+#(datasets::airquality)
+#which variable are missing values concentrated in?
+#how would you impute the mean or median for these values
+#how would you omit all rows comtaining missing values.
+
+datasets::airquality
+AirqualityData<-airquality
+AirqualityData
+is.na(AirqualityData)
+#how many mising values in airquality.
+sum(is.na(AirqualityData))
+#Columns wise info of mising
+colSums(is.na(AirqualityData))
+#impute in ozone column
+AirqualityData$Ozone[is.na(AirqualityData$Ozone)]<-mean(AirqualityData$Ozone,na.rm = TRUE)
+#impute in solar.R 
+AirqualityData$Solar.R[is.na(AirqualityData$Solar.R)]<-mean(AirqualityData$Solar.R,na.rm = TRUE)
+#omit all ...
+na.omit(AirqualityData)
